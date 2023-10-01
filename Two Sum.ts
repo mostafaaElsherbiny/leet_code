@@ -3,6 +3,6 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
-    
+var twoSum = function (nums: number[], target: number): number[] {
+  return [1];
 };

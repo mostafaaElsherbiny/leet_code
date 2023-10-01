@@ -1,1 +1,2 @@
-# leet_code
+# this repo is for leet code practice
+
