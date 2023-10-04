@@ -14,18 +14,18 @@
 
 import TreeNode from "./TreeNode";
 
-function inorderTraversal(root: TreeNode | null): number[] {
-  function inorderList(node: TreeNode | null, list: number[] = []) {
-    if (!node) return [];
-    if (node.left) {
-      inorderList(node.left, list);
+function postOrderTraversal(root: TreeNode | null): number[] {
+  function getList(root: TreeNode | null, list: number[] = []) {
+    if (!root) return [];
+    if (root.left) {
+      getList(root.left, list);
     }
-    list.push(node.val);
-    if (node.right) {
-      inorderList(node.right, list);
+    if (root.right) {
+      getList(root.right, list);
     }
+    list.push(root.val);
     return list;
   }
 
-  return inorderList(root, []);
+  return getList(root, []);
 }

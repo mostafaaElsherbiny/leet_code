@@ -10,11 +10,15 @@
  * @return {ListNode}
  */
 
-function ListNode(val, next) {
-  this.val = val === undefined ? 0 : val;
-  this.next = next === undefined ? null : next;
+class ListNode {
+  val;
+  next;
+  constructor(val, next) {
+    this.val = val === undefined ? 0 : val;
+    this.next = next === undefined ? null : next;
+  }
 }
-var deleteDuplicates = function (head) {
+var deleteDuplicates = function (head: ListNode) {
   let current = head;
   while (current) {
     if (current.next !== null) {

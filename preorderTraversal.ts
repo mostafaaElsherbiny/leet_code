@@ -1,3 +1,5 @@
+import TreeNode from "./TreeNode";
+
 /**
  * Definition for a binary tree node.
  * class TreeNode {
@@ -12,20 +14,18 @@
  * }
  */
 
-import TreeNode from "./TreeNode";
-
-function inorderTraversal(root: TreeNode | null): number[] {
-  function inorderList(node: TreeNode | null, list: number[] = []) {
-    if (!node) return [];
-    if (node.left) {
-      inorderList(node.left, list);
+function preorderTraversal(root: TreeNode | null): number[] {
+  function getList(root: TreeNode | null, list: number[] = []) {
+    if (!root) return [];
+    list.push(root.val);
+    if (root.left) {
+      getList(root.left, list);
     }
-    list.push(node.val);
-    if (node.right) {
-      inorderList(node.right, list);
+    if (root.right) {
+      getList(root.right, list);
     }
     return list;
   }
 
-  return inorderList(root, []);
+  return getList(root, []);
 }
